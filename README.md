@@ -63,9 +63,9 @@ When you login as a student, you can:
 5. Click "+ Add Student" button
 6. Fill in:
    - Student ID: S001
-   - Name: John Doe
-   - Email: john@email.com
-   - Phone: 1234567890
+   - Name: akshaya
+   - Email: akshaya525@gmail.com
+   - Phone: 8247970498 
    - Grade: 10
    - Class: A
 7. Click "Save Student"
@@ -150,8 +150,3 @@ This is a practice project for learning. If you want to use this for a real scho
 3. Use a modern browser (Chrome is best)
 4. Press F12 to see if there are any errors
 
----
-
-**Made for educational purposes. Free to use and learn from!**
-
-Have fun managing students! 😊
