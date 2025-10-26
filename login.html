@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Student Management System</title>
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🎓 Student Management System</h1>
+                <p>Please select your role to continue</p>
+            </div>
+
+            <!-- Role Selection -->
+            <div id="roleSelection" class="role-selection">
+                <div class="role-card" onclick="showLoginForm('teacher')">
+                    <div class="role-icon">👨‍🏫</div>
+                    <h3>Teacher Login</h3>
+                    <p>Access admin dashboard</p>
+                </div>
+                <div class="role-card" onclick="showLoginForm('student')">
+                    <div class="role-icon">👨‍🎓</div>
+                    <h3>Student Login</h3>
+                    <p>View your records</p>
+                </div>
+            </div>
+
+            <!-- Teacher Login Form -->
+            <div id="teacherLoginForm" class="login-form hidden">
+                <button class="back-btn" onclick="showRoleSelection()">← Back</button>
+                <h2>Teacher Login</h2>
+                <p class="form-subtitle">Access the admin dashboard</p>
+                
+                <form onsubmit="handleTeacherLogin(event)">
+                    <div class="form-group">
+                        <label for="teacherUsername">Username</label>
+                        <input type="text" id="teacherUsername" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacherPassword">Password</label>
+                        <input type="password" id="teacherPassword" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="teacherRemember">
+                        <label for="teacherRemember">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login as Teacher</button>
+                </form>
+                
+                <div class="demo-credentials">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p>Username: <code>admin</code> | Password: <code>admin123</code></p>
+                </div>
+            </div>
+
+            <!-- Student Login Form -->
+            <div id="studentLoginForm" class="login-form hidden">
+                <button class="back-btn" onclick="showRoleSelection()">← Back</button>
+                <h2>Student Login</h2>
+                <p class="form-subtitle">Access your student portal</p>
+                
+                <form onsubmit="handleStudentLogin(event)">
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" placeholder="Enter your student ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentPassword">Password</label>
+                        <input type="password" id="studentPassword" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="studentRemember">
+                        <label for="studentRemember">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login as Student</button>
+                </form>
+                
+                <div class="demo-credentials">
+                    <p><strong>Demo Student Login:</strong></p>
+                    <p>Use any Student ID from the system</p>
+                    <p>Default Password: <code>student123</code></p>
+                </div>
+            </div>
+
+            <div class="login-footer">
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="loginToast" class="toast hidden"></div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>

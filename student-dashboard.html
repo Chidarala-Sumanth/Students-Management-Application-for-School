@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="student-dashboard-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div>
+                    <h1>🎓 Student Portal</h1>
+                    <p class="subtitle" id="studentWelcome">Welcome, Student</p>
+                </div>
+                <button class="btn btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <!-- Student Info Card -->
+        <div class="student-info-section">
+            <div class="student-info-card">
+                <div class="student-avatar">👨‍🎓</div>
+                <div class="student-details">
+                    <h2 id="studentName">Student Name</h2>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Student ID:</span>
+                            <span class="detail-value" id="studentIdDisplay"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Grade:</span>
+                            <span class="detail-value" id="studentGrade"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Class:</span>
+                            <span class="detail-value" id="studentClass"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="studentEmail"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <h3>Average Grade</h3>
+                <div class="stat-value" id="avgGrade">0%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <h3>Total Subjects</h3>
+                <div class="stat-value" id="totalSubjects">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <h3>Attendance Rate</h3>
+                <div class="stat-value" id="attendanceRate">0%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <h3>Total Grades</h3>
+                <div class="stat-value" id="totalGrades">0</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="grades">My Grades</button>
+            <button class="tab-btn" data-tab="attendance">My Attendance</button>
+        </nav>
+
+        <!-- Grades Tab -->
+        <div id="grades" class="tab-content active">
+            <div class="section-header">
+                <h2>My Grades</h2>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Exam Type</th>
+                            <th>Score</th>
+                            <th>Percentage</th>
+                            <th>Date</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gradesTableBody">
+                        <!-- Grades will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Subject Performance Chart -->
+            <div class="chart-section">
+                <h3>Performance by Subject</h3>
+                <div id="subjectChart" class="chart-container">
+                    <!-- Chart will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Attendance Tab -->
+        <div id="attendance" class="tab-content">
+            <div class="section-header">
+                <h2>My Attendance Record</h2>
+            </div>
+
+            <div class="attendance-summary-cards">
+                <div class="attendance-card present-card">
+                    <h4>Present Days</h4>
+                    <div class="attendance-number" id="presentDays">0</div>
+                </div>
+                <div class="attendance-card absent-card">
+                    <h4>Absent Days</h4>
+                    <div class="attendance-number" id="absentDays">0</div>
+                </div>
+                <div class="attendance-card total-card">
+                    <h4>Total Days</h4>
+                    <div class="attendance-number" id="totalDays">0</div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <!-- Attendance records will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="student-dashboard-script.js"></script>
+</body>
+</html>
